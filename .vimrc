@@ -4,6 +4,9 @@ set nowrap
 " Set tab size to 4 spaces
 set tabstop=4
 
+" Set autoindent on
+set autoindent
+
 " Set shift width to 4 spaces
 set shiftwidth=4
 
@@ -20,12 +23,14 @@ set nobackup
 set number
 set ruler
 
+" Set tab navigation with Ctrl-tab
+nnoremap th :tabfirst<CR>
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap tl :tablast<CR>
+
 " Set color scheme
-colorscheme gotham256
+colorscheme Benokai
 
 " Configure syntax highlight files
 syntax enable
-
-source ~/.vim/syntax/asm.vim
-au BufRead,BufNewFile *.asm set filetype=asm
-au BufRead,BufNewFile *.h set filetype=asm
